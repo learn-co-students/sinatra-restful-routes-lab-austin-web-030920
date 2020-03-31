@@ -1,0 +1,17 @@
+<h1><%= @recipe.name %></h1>
+
+<h2>Ingredients:</h2>
+<p><%= @recipe.ingredients%>
+<%# <% @ingredients = @recipe.ingredients.split(', ') %> 
+<%# <ul> %>
+    <%# <% @ingredients.each do |ingredient| %> 
+    <%# <li><%= ingredient</li>  %>
+    <%# <% end %> 
+<%# </ul> %>
+<br>
+<strong>Cook Time: <%= @recipe.cook_time %><strong>
+<br>
+<form method="POST" action="/recipes/<%=@recipe.id%>">
+  <input type="hidden" name="_method" value="DELETE" />
+  <input type="submit" value="delete" />
+</form>
